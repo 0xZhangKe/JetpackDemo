@@ -11,6 +11,10 @@
             name="user"
             type="com.zhangke.demo.jetpack.entity.User" />
 
+        <variable
+            name="content"
+            type="com.zhangke.demo.jetpack.entity.Content" />
+
     </data>
 
     <LinearLayout
@@ -19,7 +23,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:padding="10dp"
+        android:paddingTop="10dp"
+        android:paddingStart="10dp"
+        android:paddingEnd="20dp"
         tools:context=".MainActivity">
 
         <TextView
@@ -38,13 +44,35 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
+                android:textSize="18sp"
                 android:text="name"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical|end"
+                android:textSize="18sp"
                 android:text="@{user.name}" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:textSize="18sp"
+                android:text="desc"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|end"
+                android:textSize="18sp"
+                android:text="@{content.desc}" />
         </FrameLayout>
 
     </LinearLayout>
