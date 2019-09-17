@@ -2,29 +2,31 @@ package com.zhangke.demo.jetpack.entity
 
 import androidx.databinding.BaseObservable
 import androidx.databinding.Bindable
-import androidx.lifecycle.MutableLiveData
+import androidx.databinding.ObservableField
+import androidx.databinding.ObservableInt
 import com.zhangke.demo.jetpack.BR
 
 /**
  * Created by ZhangKe on 2019/9/11.
  */
 
-class User : BaseObservable() {
-
-    @get:Bindable
-    var name: String = ""
-        set(value) {
-            field = value
-            notifyPropertyChanged(BR.name)
-        }
-
+class User {
+    var age = ObservableInt()
+    var name = ObservableField<String>()
 }
 
-class Content(_desc: String) {
+class Person : BaseObservable() {
+    @get:Bindable
+    var country: String = ""
+        set(value) {
+            field = value
+            notifyPropertyChanged(BR.country)
+        }
 
-    val desc = MutableLiveData<String>()
-
-    init {
-        desc.value = _desc
-    }
+    @get:Bindable
+    var sex: String = ""
+        set(value) {
+            field = value
+            notifyPropertyChanged(BR.sex)
+        }
 }

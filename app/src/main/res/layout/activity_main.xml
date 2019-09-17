@@ -3,17 +3,28 @@
 
     <data>
 
+        <import type="androidx.databinding.ObservableMap"/>
+        <import type="androidx.databinding.ObservableList"/>
+
         <variable
             name="title"
             type="java.lang.String" />
+
+        <variable name="map" type="ObservableMap&lt;String, Object>"/>
+
+        <variable name="list" type="ObservableList&lt;Object>"/>
 
         <variable
             name="user"
             type="com.zhangke.demo.jetpack.entity.User" />
 
         <variable
-            name="content"
-            type="com.zhangke.demo.jetpack.entity.Content" />
+            name="person"
+            type="com.zhangke.demo.jetpack.entity.Person" />
+
+        <variable
+            name="desc"
+            type="androidx.lifecycle.MutableLiveData&lt;String>" />
 
     </data>
 
@@ -65,6 +76,106 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:textSize="18sp"
+                android:text="age"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|end"
+                android:textSize="18sp"
+                android:text="@{String.valueOf(user.age)}" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:textSize="18sp"
+                android:text="map.value"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|end"
+                android:textSize="18sp"
+                android:text="@{String.valueOf(map.count)}" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:textSize="18sp"
+                android:text="list[0]"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|end"
+                android:textSize="18sp"
+                android:text="@{String.valueOf(list[0])}" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:textSize="18sp"
+                android:text="Person.country"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|end"
+                android:textSize="18sp"
+                android:text="@{person.country}" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:textSize="18sp"
+                android:text="Person.Sex"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|end"
+                android:textSize="18sp"
+                android:text="@{person.sex}" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:textSize="18sp"
                 android:text="desc"/>
 
             <TextView
@@ -72,7 +183,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical|end"
                 android:textSize="18sp"
-                android:text="@{content.desc}" />
+                android:text="@{desc}" />
         </FrameLayout>
 
     </LinearLayout>
