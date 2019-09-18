@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <data>
+    <data class=".MainActivityBinding">
 
         <import type="androidx.databinding.ObservableMap"/>
         <import type="androidx.databinding.ObservableList"/>
@@ -26,6 +26,17 @@
             name="desc"
             type="androidx.lifecycle.MutableLiveData&lt;String>" />
 
+        <variable
+            name="input"
+            type="androidx.databinding.ObservableField&lt;String>" />
+
+        <variable
+            name="handler"
+            type="com.zhangke.demo.jetpack.MainActivity.EventHandler" />
+
+        <variable
+            name="imageUrl"
+            type="java.lang.String" />
     </data>
 
     <LinearLayout
@@ -185,7 +196,31 @@
                 android:textSize="18sp"
                 android:text="@{desc}" />
         </FrameLayout>
+        
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="@{input}"/>
+        
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@={input}"/>
 
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:onClick="@{handler::onToastBtnClick}"
+            android:text="ToastClick"/>
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="10dp"
+            imageUrl="@{imageUrl}"
+            android:layout_gravity="center_horizontal"/>
     </LinearLayout>
 
 </layout>
