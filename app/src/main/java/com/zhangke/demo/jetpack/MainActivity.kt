@@ -52,6 +52,7 @@ class MainActivity : AppCompatActivity() {
 
         Thread {
             for (i in 1..100) {
+                binding.title = "title$i"
                 map["count"] = i
                 list[0] = i
                 user.name.set("ZhangKe:$i")
